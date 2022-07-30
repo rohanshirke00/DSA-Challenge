@@ -21,23 +21,22 @@ class Solution {
 //         return target;
 //     }
     
+
     
-//     public int[] createTargetArray(int[] nums, int[] index) {
+    
+    
+    // small changes
+    
+//     public int[] createTargetArray(int[] nums, int[] index){
 //         int[] target = new int[index.length];    
-    
-//         List<Integer> list = new ArrayList<>();
         
 //         for(int i=0; i<nums.length; i++){
-
-//             list.add(index[i], nums[i]);
-
+//             for(int j=i; j>index[i]; j--){
+//                 target[j] = target[j-1];
+//             }
+//             target[index[i]]=nums[i];
 //         }
     
-//         for(int i=0; i<nums.length; i++){
-        
-//             target[i] = list.get(i);
-        
-//         }
 //         return target;
         
 //     }
@@ -45,16 +44,24 @@ class Solution {
     
     
     
+    // method 2 using List
+    
     public int[] createTargetArray(int[] nums, int[] index) {
         int[] target = new int[index.length];    
+    
+        List<Integer> list = new ArrayList<>();
         
         for(int i=0; i<nums.length; i++){
-            for(int j=i; j>index[i]; j--){
-                target[j] = target[j-1];
-            }
-            target[index[i]]=nums[i];
+
+            list.add(index[i], nums[i]);
+
         }
     
+        for(int i=0; i<nums.length; i++){
+        
+            target[i] = list.get(i);
+        
+        }
         return target;
         
     }
