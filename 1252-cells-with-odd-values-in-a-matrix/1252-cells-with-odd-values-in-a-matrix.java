@@ -1,28 +1,34 @@
 // class Solution {
 //     public int oddCells(int m, int n, int[][] indices) {
-//         int [][] ans = new int[m][n];
-//         for(int i=0; i<indices.length; i++){
-//             for(int j=0; j<n; j++){
-//                 ans[indices[i][0]][j]++;
+//         int row=indices.length;
+//         int col=indices[0].length;
+//         int mat[][]=new int[m][n];
+//         for(int i=0;i<m;i++){
+//             for(int j=0;j<n;j++){
+//                 mat[i][j]=0;
 //             }
-//             for(int j=0; j<m; j++){
-//                 ans[j][indices[i][1]]++;
-//             }
-            
 //         }
         
-//         int count = 0;
-        
-//         for(int i=0; i<m; i++){
-//             for(int j=0; j<n; j++){
-//                 if(!(ans[i][j]%2==0)) count ++;
+//         for(int i=0;i<row;i++){
+//             int row_inc=indices[i][0];
+//             int col_inc=indices[i][1];
+//             for(int c=0;c<n;c++){
+//                 mat[row_inc][c]++;
+//             }
+//             for(int r=0;r<m;r++){
+//                 mat[r][col_inc]++;
+//             }
+//         }
+//         int count=0;
+//         for(int i=0;i<m;i++){
+//             for(int j=0;j<n;j++){
+//                 if(mat[i][j]%2!=0)
+//                     count++;
 //             }
 //         }
 //         return count;
-        
 //     }
 // }
-
 
 class Solution {
 public int oddCells(int m, int n, int[][] indices) {
