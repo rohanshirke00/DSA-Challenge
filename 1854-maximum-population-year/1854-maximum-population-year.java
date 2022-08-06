@@ -1,3 +1,5 @@
+//brute force
+
 // class Solution {
 //     public int maximumPopulation(int[][] logs) {
 //         int[] num = new int[101];   //1950-250 =100 yr
@@ -38,7 +40,7 @@
 
 
 
-
+//optimised approach
 
 class Solution {
     public int maximumPopulation(int[][] logs) {
