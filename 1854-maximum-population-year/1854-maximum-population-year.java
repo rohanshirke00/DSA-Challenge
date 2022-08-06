@@ -1,0 +1,32 @@
+class Solution {
+    public int maximumPopulation(int[][] logs) {
+        int[] num = new int[101];   //1950-250 =100 yr
+        
+        //travering the logs[][] array
+        for(int i=0; i<logs.length; i++){   
+            
+            //incrementing the yr from x year to y year
+            for(int j=logs[i][0]; j<logs[i][1]; j++){
+                
+                //incrementing the yr at index
+                num[j - 1950]++;
+                
+            }
+        }
+        
+        int maxValue=0;
+        int maxYear=1950;
+        
+        //checking which yr has maximum count
+        for(int i=0; i<101; i++){
+            if(num[i]>maxValue){
+                maxValue=num[i];
+                maxYear = i+1950;
+                
+            }
+        }
+        
+        return maxYear;
+        
+    }
+}
