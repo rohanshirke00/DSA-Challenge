@@ -14,12 +14,13 @@ class Solution {
 
 
 //approach 2    T => O(1)    S => (1)
+
 // class Solution {
 //     public boolean isPowerOfTwo(int n) {
 //         if(n==0){
 //             return false;
 //         }
-
+        
 //         return floor(log2(n))==ceil(log2(n))?true:false;
 //     }
 // }
