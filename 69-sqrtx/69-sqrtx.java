@@ -1,28 +1,29 @@
 class Solution {
     public int mySqrt(int x) {
-        long start = 0;
-        long end = x;
+
+        int start = 1;
+        int end = x;
+        int ans = 0;
         
-        // we know that sqrt(x) = y
-        // y*y = x
+        if(x==0) return 0;
         
         while(start<=end){
-            //mid point
-            long mid = start + (end-start)/2;
             
-            //checking square of mid gives us x or not
-            if(mid*mid==x){
-             
-                return (int)mid;
+            int mid = start + (end - start)/2;
             
-            }else if(mid*mid < x){
+            if(mid<=x/mid){
+                
+                ans = mid;
                 start = mid+1;
-            }else{
+                
+            }
+            else{
+                
                 end = mid-1;
+                
             }
             
         }
-        return (int)end;
-        
+        return ans;
     }
 }
