@@ -16,7 +16,7 @@ class Solution {
                 return new int[] {start+1,end+1};
             }
         }
-        return new int[] {};
+        return new int[] {start+1,end+1};
     }
     
 }
