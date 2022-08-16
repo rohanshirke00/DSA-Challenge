@@ -5,17 +5,19 @@ class Solution {
         
         int s = 0;
         int e = arr.length-1;
-        
-        while(s<=e){
+        int ans=-1;
+        while(s<e){
             int mid = s + (e-s) / 2;   
             if(arr[mid] < arr[mid+1]){
+                ans = mid+1;
                 s = mid+1;
             }
             else{
-                e = mid-1;
+                ans = mid;
+                e = mid;
             }
         }   
-        return s;
+        return ans;
     }
 }
 
