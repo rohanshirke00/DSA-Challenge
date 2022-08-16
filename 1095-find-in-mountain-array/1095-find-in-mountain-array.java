@@ -19,7 +19,7 @@ class Solution {
         if(firstHalf != -1){
             return firstHalf;
         }
-        return orderAgnosticBinarySearch(mountainArr,target,peakIndex,end);
+        return orderAgnosticBinarySearch(mountainArr,target,peakIndex+1,end);
     }
     
     
