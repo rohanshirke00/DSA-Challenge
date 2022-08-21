@@ -1,4 +1,4 @@
-// approach 1
+// approach 1 Time Complexity : O(A.length+B.length).
 
 // class Solution {
 
