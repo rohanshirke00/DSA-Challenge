@@ -1,3 +1,6 @@
+
+// HashSet Time complexity: O(n)
+
 // class Solution {
 //     public int[] intersection(int[] nums1, int[] nums2) {
 //         HashSet<Integer> set1 = new HashSet<Integer>();
@@ -23,29 +26,49 @@
 // }
 
 
-//binary search
+// Binary search Time complexity: O(nlogn)
 
+import java.util.*;
 class Solution {
 
-public int[] intersection(int[] nums1, int[] nums2) {
-    Arrays.sort(nums1);
-    Arrays.sort(nums2);
- 
-    ArrayList<Integer> list = new ArrayList<Integer>();
-    for(int i=0; i<nums1.length; i++){
-        if(i==0 || (i>0 && nums1[i]!=nums1[i-1])){
-            if(Arrays.binarySearch(nums2, nums1[i])>-1){
-                list.add(nums1[i]);
+    public int[] intersection(int[] nums1, int[] nums2) {
+            
+        Set<Integer> set = new HashSet<>();
+        Arrays.sort(nums2);
+        for(Integer num : nums1){
+            
+            if(binarySearch(nums2,num)){
+                set.add(num);
             }
         }
+        
+        int[] ans = new int[set.size()];
+        int i=0;
+        for(int item : set){
+            ans[i++] = item;
+        }
+        
+        return ans;
+        
     }
- 
-    int[] result = new int[list.size()];
-    int k=0;
-    for(int i: list){
-        result[k++] = i;
+    
+    static boolean binarySearch(int[] arr, int num){
+        int start =0;
+        int end = arr.length-1;
+        
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            
+            if(arr[mid]==num){
+                return true;
+            }else if(arr[mid] > num){
+                end = mid-1;
+            }else{
+                start = mid+1;
+            }
+            
+        }
+        return false;
     }
- 
-    return result;
-}
+
 }
