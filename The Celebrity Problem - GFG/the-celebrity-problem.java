@@ -32,7 +32,7 @@ class GFG{
 
 class Solution
 { 
-    //Function to find if there is a celebrity in the party or not.
+
     int celebrity(int arr[][], int n)
     {
     	Stack<Integer> st = new Stack<>();
