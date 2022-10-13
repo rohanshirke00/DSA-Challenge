@@ -83,50 +83,33 @@ class Solution {
     public pair[] allPairs( long A[], long B[], long N, long M, long X) {
         
         ArrayList<pair> al = new ArrayList<>();
-
         Arrays.sort(A);
-
         Arrays.sort(B); 
-
         int i=0, j=(int)M-1; 
 
-        
-
-        while(i<N && j>=0){
-
-            if(A[i]+B[j] == X){
-
+        while(i<N && j>=0)
+        {
+            if(A[i]+B[j] == X)
+            {
                 pair t = new pair(A[i],B[j]);
-
                 al.add(t);  
-
                 j--;
-
             } 
-
             else if(A[i]+B[j]>X)
-
                 j--;
-
             else
-
                 i++;
-
         }
-
-        
 
         pair[] obj = new pair[al.size()];
 
         int k = 0;
-
-        for(pair p: al){
-
+        for(pair p: al)
+        {
             obj[k++] = p;
-
         }
 
         return obj;    
-        
+
     }
 }
